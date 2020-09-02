@@ -2,12 +2,12 @@
 
 const mongoose = require('mongoose');
 
-const SubSchema = new mongoose.Schema({
+const subSchema = new mongoose.Schema({
     name: String,
     description: String,
-    users: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
+    members: [{type: mongoose.Schema.Types.ObjectId, ref: 'Member'}]
 }, {
     timestamps: true
 });
 
-module.exports = mongoose.model('Sub', SubSchema)
+module.exports = mongoose.model('Sub', subSchema)

@@ -13,12 +13,10 @@
  <div class="list-of-subs">
      <h1>Below Is The Collection of Every Submeddit with a Description</h1>
      <br>
-    <p> <%= subs %> </p>
+     <% sub.forEach(function(s) { %>
+        <h1><a href="subs/<%= s._id%>"><%=s.name%></a></h1>
+        <p> <%= s.description %> </p>
+    <% }) %>
     
 
- </div>
-
- </div>
- <p>this is the All Meddit Subs Page</p>>
-</body>
-</html>
+<%- include('../partials/footer') %>

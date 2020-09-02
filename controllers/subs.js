@@ -3,12 +3,14 @@ const Sub = require('../models/sub');
 module.exports = {
     index,
     create,
-    show,
-    // showNewSub
+    showNewSub
 }
 
 function index(req, res) {
-    res.render('meddit/allSubs')
+    Sub.find({}, function(err, sub){
+        if (err) return res.redirect('/subs');
+        res.render('meddit/allSubs', {sub})
+    });
 }
 
 function create(req,res,next) {
@@ -18,17 +20,10 @@ function create(req,res,next) {
     });
 }
 
-function show(req,res,next) {
-    Sub.find({}, function(err, subs){
-      if (err) return res.redirect('/subs');
-      console.log(subs)
-      res.render('meddit/allSubs')  
+function showNewSub(req, res, next) {
+    console.log(req.params.id)
+    Sub.findById(req.params.id, function(err) {
+        if(err) return res.redirect('/subs');
+        res.render("meddit/new", )
     });
 }
-
-// function showNewSub(req, res, next) {
-//     Sub.findById(req.params.id, function(err, sub) {
-//         if(err) return res.redirect('/subs');
-//         res.render("meddit/new", )
-//     })
-// }
