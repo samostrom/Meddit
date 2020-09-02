@@ -12,17 +12,16 @@
     <nav>
         <i class="fas fa-diagnoses fa-2x"></i>
         <a href="/">Home</a> 
-        <ul class="right">
-            <li>
+        <div class="right">
+            
                 <% if (user) { %>
-                    <a href="logout"></a>
+                    <a href="/logout">log out</a>
                 <% } else { %> 
-                    <a href="/auth/google"></a>
+                    <a href="/auth/google">log in</a>
                 <% } %>
-             </li>
-        </ul>
+        
+        <a href="/subs">List of Meddit Subs</a>
+        </div>
     </nav>
     
-</body>
-</html>
 

@@ -1,0 +1,24 @@
+ <%- include('../partials/header') %>
+
+ <div>
+    <form id="create-sub" method="POST" action="/subs">
+        <label>Name of Submeddit:</label>
+        <input type="text" name="name">
+        <label>Description</label>
+        <input type="text" name="description">
+        <input type="submit" value="Add Sub">
+    </form>
+ </div>
+
+ <div class="list-of-subs">
+     <h1>Below Is The Collection of Every Submeddit with a Description</h1>
+     <br>
+    <p> <%= subs %> </p>
+    
+
+ </div>
+
+ </div>
+ <p>this is the All Meddit Subs Page</p>>
+</body>
+</html>
