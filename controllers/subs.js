@@ -1,4 +1,5 @@
 const Sub = require('../models/sub');
+const Post = require('../models/post');
 
 module.exports = {
     index,
@@ -21,9 +22,10 @@ function create(req,res,next) {
 }
 
 function showNewSub(req, res, next) {
-    console.log(req.params.id)
-    Sub.findById(req.params.id, function(err) {
-        if(err) return res.redirect('/subs');
-        res.render("meddit/new", )
+    Sub.findById(req.params.id).populate('members').exec(function(err, sub) {
+        Post.find({}, function(err, posts){
+            if(err) return res.redirect('/subs');
+            res.render("meddit/allPosts", {sub, posts})
+        })
     });
 }

@@ -2,7 +2,9 @@
 <%- include('../partials/header') %>
 
 <!-- How do I add dynamic code here to say welcome to the subs name -->
-<h1> WELCOME </h1>
+<h1> WELCOME TO M/<%=sub.name%>! </h1>
+
+<%= sub.members %>
 
 <h2>Add a Post!</h2>
 <h3>To add a post, please add a title and either a URL, text, or both</h3>
@@ -17,5 +19,13 @@
         <input type="submit" value="Add Sub">
     </form>
  </div>
+
+ <div class="list-of-posts">
+    <h1>Recent Posts</h1>
+    <br>
+    <% posts.forEach(function(p) { %>
+       <h2><a href=":id/posts/<%=p._id%>"><%=p.title%></a></h2>
+   <% }) %>
+</div>
 
 <%- include('../partials/footer') %>

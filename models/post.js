@@ -1,13 +1,25 @@
 
 const mongoose = require('mongoose');
 
-const postSchema = new mongoose.Schema({
-    title: String,
+const commentSchema = new mongoose.Schema({
     text: String,
-    url: String,
-    members: {type: mongoose.Schema.Types.ObjectId, ref: 'Member'}
+    createdBy: {type: mongoose.Schema.Types.ObjectId, ref: 'Member'},
+    replies: [this]
 }, {
     timestamps: true
 });
 
-module.exports = mongoose.model('Sub', subSchema)
+const postSchema = new mongoose.Schema({
+    title: String,
+    text: String,
+    url: String,
+    author: {type: mongoose.Schema.Types.ObjectId, ref: 'Member'},
+    comments: [commentSchema]
+}, {
+    timestamps: true
+});
+
+
+
+module.exports = mongoose.model('Comment', commentSchema);
+module.exports = mongoose.model('Post', postSchema);
