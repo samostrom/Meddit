@@ -7,7 +7,7 @@
 <h2>Add a Post!</h2>
 <h3>To add a post, please add a title and either a URL, text, or both</h3>
 <div>
-    <form id="create-post" method="POST" action="/subs/:id">
+    <form id="create-post" method="POST" action="/subs/<%=sub._id%>/posts">
         <label>Post Title:</label>
         <input type="text" name="title">
         <label>Text:</label>
@@ -22,7 +22,7 @@
     <h1>Recent Posts</h1>
     <br>
     <% posts.forEach(function(p) { %>
-       <h2><a href=":id/posts/<%=p._id%>"><%=p.title%></a></h2>
+       <h2><a href="/subs/<%=sub._id%>/posts/<%=p._id%>"><%=p.title%></a></h2>
    <% }) %>
 </div>
 

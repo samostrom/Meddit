@@ -14,6 +14,7 @@ const postSchema = new mongoose.Schema({
     text: String,
     url: String,
     author: {type: mongoose.Schema.Types.ObjectId, ref: 'Member'},
+    sub: {type: mongoose.Schema.Types.ObjectId, ref: 'Sub'},
     comments: [commentSchema]
 }, {
     timestamps: true
@@ -21,5 +22,4 @@ const postSchema = new mongoose.Schema({
 
 
 
-module.exports = mongoose.model('Comment', commentSchema);
 module.exports = mongoose.model('Post', postSchema);

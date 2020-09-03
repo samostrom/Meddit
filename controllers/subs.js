@@ -23,7 +23,7 @@ function create(req,res,next) {
 
 function showNewSub(req, res, next) {
     Sub.findById(req.params.id).populate('members').exec(function(err, sub) {
-        Post.find({}, function(err, posts){
+        Post.find({sub:req.params.id}, function(err, posts){
             if(err) return res.redirect('/subs');
             res.render("meddit/allPosts", {sub, posts})
         })

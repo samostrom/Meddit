@@ -1,14 +1,16 @@
 <%- include('../partials/header') %>
 
 <div>
-    <form id="create-comment" method="POST" action="/:id/posts/:id">
+    <form id="create-comment" method="POST" action="/subs/<%=post.sub%>/posts/<%=post._id%>/comments">
         <label>Text:</label>
         <input type="text" name="text">
         <input type="submit" value="Add Comment">
     </form>
  </div>
 
-
+<% post.comments.forEach(c => { %>
+    <p><%= c.text %></p>
+<% }) %>
 
 
 <%- include('../partials/footer') %>
