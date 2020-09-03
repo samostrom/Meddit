@@ -5,7 +5,8 @@ const Post = require('../models/post');
 module.exports = {
     create,
     showNewPost,
-    deletePost
+    deletePost,
+    editPost
 
 }
 
@@ -25,6 +26,15 @@ function showNewPost(req, res) {
 }
 
 function deletePost(req, res) {
-    Post.deleteOne(req.params.pid);
-    res.redirect(`/subs/${req.params.id}`)
+    Post.findOneAndDelete(req.params.pid, function(err){
+        if(err) console.log(err);
+        res.redirect(`/subs/${req.params.id}`)
+    });
+}
+
+function editPost(req, res) {
+    Post.findOneAndUpdate(req.params.pid, req.body, function(err){
+        if(err) console.log(err);
+        res.redirect(`/subs/${req.params.id}`)
+    });   
 }

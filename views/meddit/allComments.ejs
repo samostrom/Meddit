@@ -17,6 +17,9 @@
 
 <% post.comments.forEach(c => { %>
     <p><%= c.text %></p>
+    <form action="/subs/<%=post.sub%>/posts/<%=post._id%>/comments/<%=c._id%>?_method=DELETE"
+        class="delete-comment" method="POST">
+        <button type="submit">delete</button>
 <% }) %>
 
 

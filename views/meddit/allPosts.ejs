@@ -5,10 +5,10 @@
 <h1> WELCOME TO M/<%=sub.name%>! </h1>
 
 <h2>Add a Post!</h2>
-<h3>To add a post, please add a title and either a URL, text, or both</h3>
+<h3>To add a post, please add a topic and either a URL, text, or both</h3>
 <div>
     <form id="create-post" method="POST" action="/subs/<%=sub._id%>/posts">
-        <label>Post Title:</label>
+        <label>Post Topic:</label>
         <input type="text" name="title">
         <label>Text:</label>
         <input type="text" name="text">
@@ -23,10 +23,17 @@
     <br>
     <% posts.forEach(function(p) { %>
        <h2><a href="/subs/<%=sub._id%>/posts/<%=p._id%>"><%=p.title%></a></h2>
-        <form action="/subs/<%sub._id%>/posts/<%=p._id%>?_method=DELETE"
+        <form action="/subs/<%=sub._id%>/posts/<%=p._id%>?_method=DELETE"
             class="delete-post" method="POST">
             <button type="submit">delete</button>
         </form>
+        <form action="/subs/<%=sub._id%>/posts/<%=p._id%>?_method=PUT"
+            class="edit-post" method="POST" autocomplete="off">
+            <button type="submit">Save Changes</button>
+            <input type="text" name="title" value="edit your topic here">
+            <input type="text" name="text" value="edit description here">
+        </form>
+        
    <% }) %>
 </div>
 
