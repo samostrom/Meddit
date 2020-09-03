@@ -1,6 +1,13 @@
 <%- include('../partials/header') %>
 
 <div>
+    <a href="/subs/<%=post.sub%>">Go back to posts</a>
+    <h1><%= post.title %></h1>
+    <h2><%= post.text %></h2>
+</div>
+
+
+<div>
     <form id="create-comment" method="POST" action="/subs/<%=post.sub%>/posts/<%=post._id%>/comments">
         <label>Text:</label>
         <input type="text" name="text">

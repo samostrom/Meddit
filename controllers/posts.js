@@ -1,10 +1,12 @@
 const Post = require('../models/post');
-const comments = require('./comments');
+
 
 
 module.exports = {
     create,
-    showNewPost
+    showNewPost,
+    deletePost
+
 }
 
 function create(req, res, next) {
@@ -22,4 +24,7 @@ function showNewPost(req, res) {
     })
 }
 
-
+function deletePost(req, res) {
+    Post.deleteOne(req.params.pid);
+    res.redirect(`/subs/${req.params.id}`)
+}
