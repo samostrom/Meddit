@@ -17,10 +17,11 @@
 
 <% post.comments.forEach(c => { %>
     <p><%= c.text %></p>
-    <% if(post.member.toString() == member._id.toString()){ %>
+    <% if(c.createdBy.toString() == user._id.toString()){ %>
     <form action="/subs/<%=post.sub%>/posts/<%=post._id%>/comments/<%=c._id%>?_method=DELETE"
         class="delete-comment" method="POST">
         <button type="submit">delete</button>
+    </form>
     <% } %>
 
 <% }) %>

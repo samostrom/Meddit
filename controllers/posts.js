@@ -24,14 +24,15 @@ function showNewPost(req, res) {
 }
 
 function deletePost(req, res) {
-    Post.findOneAndDelete(req.params.pid, function(err){
+    console.log(req.params)
+    Post.findByIdAndDelete(req.params.pid, function(err){
         if(err) console.log(err);
         res.redirect(`/subs/${req.params.id}`)
     });
 }
 
 function editPost(req, res) {
-    Post.findOneAndUpdate(req.params.pid, req.body, function(err){
+    Post.findByIdAndUpdate(req.params.pid, req.body, function(err){
         if(err) console.log(err);
         res.redirect(`/subs/${req.params.id}`)
     });   
