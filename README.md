@@ -1,6 +1,6 @@
 # MEDDIT, the medical reddit
 
-## I have always loved reddit and came up with the idea to make reddit but for medical. Thus meddit was born.
+### I have always loved reddit and came up with the idea to make reddit but for medical. Thus meddit was born.
 
 ## Technologies Used
 
@@ -16,6 +16,8 @@
 Click on the link below and login with your google account. Feel free to make your own subs, post in others subs and leave comments on posts.
 The goal is to get everyone collaborating together!
 
+[MEDDIT](https://medditsite.herokuapp.com/)
+
 ### Icebox Items
 
 - Creation of Subs must be unique
@@ -24,4 +26,6 @@ The goal is to get everyone collaborating together!
 - Add the ability to vote on subjects
 - A place to save favorite posts for each user
 - subscribe to different subs
+
+[Link to my Wireframes](https://miro.com/app/board/o9J_kmA4LnU=/)
 
