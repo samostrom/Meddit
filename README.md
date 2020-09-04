@@ -2,6 +2,8 @@
 
 ### I have always loved reddit and came up with the idea to make reddit but for medical. Thus meddit was born.
 
+![](https://i.imgur.com/vS4D61P.png)
+
 ## Technologies Used
 
 1. HTML
@@ -26,6 +28,7 @@ The goal is to get everyone collaborating together!
 - Add the ability to vote on subjects
 - A place to save favorite posts for each user
 - subscribe to different subs
+- add scroll bars to scroll down further
 
 [Link to my Wireframes](https://miro.com/app/board/o9J_kmA4LnU=/)
 

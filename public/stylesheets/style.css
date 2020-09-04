@@ -1,8 +1,42 @@
+html, body {
+  height: 100%;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(https://img.freepik.com/free-vector/abstract-background-health-care-science-icon-pattern-medical-innovation-concept_44392-177.jpg?size=626&ext=jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: cover;
 }
 
 a {
   color: #00B7FF;
+}
+
+#frontpage-title {
+  Font-size: 200px;
+  color: white;
+  text-align: center;
+  text-justify: center;
+  
+}
+
+.comments {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height:300px;
+}
+
+.list-of-posts {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 300px;
+}
+
+.list-of-subs {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 300px;
 }
