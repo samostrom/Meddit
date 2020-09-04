@@ -7,6 +7,7 @@ module.exports = {
 };
 
 function create(req, res) {
+    req.body.createdBy = req.user._id
     Post.findById(req.params.pid, function(err, post) {
         post.comments.push(req.body);
         post.save(function(err) {
@@ -24,10 +25,3 @@ function deleteComment(req, res) {
     })
 }
 
-// function deleteComment(req, res) {
-//     Post.findById(req.params.pid, function(err, post){
-//         post.comments.pull(req.params.cid, function(err){
-//             res.redirect(`/subs/${req.params.id}/posts/${req.params.pid}`)
-//         });
-//     });
-// }

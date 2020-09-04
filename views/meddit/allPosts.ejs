@@ -23,6 +23,7 @@
     <br>
     <% posts.forEach(function(p) { %>
        <h2><a href="/subs/<%=sub._id%>/posts/<%=p._id%>"><%=p.title%></a></h2>
+       <% if(sub.member.toString() == user._id.toString()){ %>
         <form action="/subs/<%=sub._id%>/posts/<%=p._id%>?_method=DELETE"
             class="delete-post" method="POST">
             <button type="submit">delete</button>
@@ -30,10 +31,10 @@
         <form action="/subs/<%=sub._id%>/posts/<%=p._id%>?_method=PUT"
             class="edit-post" method="POST" autocomplete="off">
             <button type="submit">Save Changes</button>
-            <input type="text" name="title" value="edit your topic here">
-            <input type="text" name="text" value="edit description here">
+            <input type="text" name="title" placeholder="edit your topic here">
+            <input type="text" name="text" placeholder="edit description here">
         </form>
-        
+    <% } %>
    <% }) %>
 </div>
 
